@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from '../components/Nav/Nav'
 import Categories from '../Categories'
 import Card from '../components/Card'
+import { food_items } from '../food'
 
 const Home = () => {
   return (
@@ -18,7 +19,16 @@ const Home = () => {
             })
         }
         </div>
-        <Card/>
+        <div>
+         
+          {
+            food_items.map((item) => (
+              
+              <Card name={item.food_name} image={item.food_image} price={item.price} id={item.id} 
+              type={item.food_type} key={item.id}/>
+            ))
+          }
+        </div>
     </div>
   )
 }
