@@ -1,5 +1,7 @@
     import React from 'react'
     import { LuLeafyGreen } from "react-icons/lu";
+    import { GiChickenOven } from "react-icons/gi";
+
 
     // import image1 from "../assets/image1.avif"
     const Card = ({name , image , id, price,type}) => {
@@ -15,7 +17,9 @@
                 <div className='w-full flex justify-between  items-center'>
                     <div className='text-lg font-bold text-green-500'>Tk {price}/-</div>
                     <div className=' flex justify-center items-center gap-2 text-green-500 text-xl font-semibold' >
-                        <LuLeafyGreen />
+                        {
+                            type === "veg" ? <LuLeafyGreen /> : <GiChickenOven />
+                        }
                         <span> {type}</span>
                     </div>
 

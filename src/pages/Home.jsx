@@ -19,8 +19,9 @@ const Home = () => {
             })
         }
         </div>
-        <div>
-         
+        {/* ============= map =============== */}
+        <div className='w-full flex justify-center items-center flex-wrap gap-5 px-5 py-8'>
+
           {
             food_items.map((item) => (
               
