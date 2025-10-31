@@ -7,14 +7,17 @@ import { food_items } from '../food'
 const Home = () => {
 // ============ useState , Function ==================
   let [cate ,setCate] = useState(food_items);
-  const filter = (category) =>{
+  
+  function filter  (category) {
     if (category === "All") {
       setCate(food_items)
     }else{
-      let newList = food_items.filter((item) => (item.food_category === category))
+      let newList = food_items.filter((item) => (item.food_category === category));
+      setCate(newList);
     }
+    
   }
-  
+
 // ============ ==================
 
   return (
@@ -23,7 +26,8 @@ const Home = () => {
         <div className='flex flex-wrap justify-center items-center gap-5 w-full'> 
         {
             Categories.map((item) =>{
-             return   <div className='w-[150px] h-[140px] bg-white flex flex-col  items-start justify-start gap-5 p-5 text-xl font-semibold text-gray-600 rounded-lg shadow-xl cursor-pointer hover:bg-green-200 transition-all duration-200'>
+             return   <div className='w-[150px] h-[140px] bg-white flex flex-col  items-start justify-start gap-5 p-5 text-xl font-semibold text-gray-600 rounded-lg shadow-xl cursor-pointer hover:bg-green-200 transition-all duration-200' 
+             onClick={() => filter(item.name)}>
                     {item.icon}
                     {item.name}
 
