@@ -3,10 +3,8 @@ import { LuLeafyGreen } from "react-icons/lu";
 import { GiChickenOven } from "react-icons/gi";
 
 
-// import image1 from "../assets/image1.avif"
+
 const Card = ({ name, image, id, price, type }) => {
-
-
     return (
         <div
             className='w-[300px] h-[400px] bg-white p-3 rounded-lg flex flex-col gap-3 shadow-lg hover:border-2 border-green-400   cursor-pointer'>

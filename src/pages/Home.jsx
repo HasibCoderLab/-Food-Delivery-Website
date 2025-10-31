@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Nav from '../components/Nav/Nav'
 import Categories from '../Categories'
 import Card from '../components/Card'
 import { food_items } from '../food'
 
 const Home = () => {
+// ============ useState , Function ==================
+  let [cate ,setCate] = useState(food_items);
+  const filter = (category) =>{
+    if (category === "All") {
+      setCate(food_items)
+    }else{
+      let newList = food_items.filter((item) => (item.food_category === category))
+    }
+  }
+  
+// ============ ==================
+
   return (
     <div className='bg-slate-200 w-full min-h-screen'>        
         <Nav/>
@@ -23,7 +35,7 @@ const Home = () => {
         <div className='w-full flex justify-center items-center flex-wrap gap-5 px-5 py-8'>
 
           {
-            food_items.map((item) => (
+            cate.map((item) => (
               
               <Card name={item.food_name} image={item.food_image} price={item.price} id={item.id} 
               type={item.food_type} key={item.id}/>
