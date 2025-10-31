@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from '../components/Nav/Nav'
 import Categories from '../Categories'
+import Card from '../components/Card'
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
             })
         }
         </div>
+        <Card/>
     </div>
   )
 }
