@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { MdFastfood } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
 import { LuShoppingBag } from "react-icons/lu";
-import UseContext, { dataContext } from '../../context/UserContext';
+
 import { food_items } from '../../food';
+import { dataContext } from '../../context/UserContext';
 const Nav = () => {
 
-    const { input, setInput, cate, setCate } = UseContext(dataContext);
+    const { input, setInput, cate, setCate } = useContext(dataContext)
     useEffect(() => {
        const  newList = food_items.filter((item) => item.food_name.includes(input) 
         || item.food_name.toLowerCase().includes(input))
