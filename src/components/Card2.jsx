@@ -10,13 +10,15 @@ const Card2 = () => {
                 </div>
 
                 <div 
-                className='w-[40%] h-full flex flex-col gap-5'>
+                    className='w-[40%] h-full flex flex-col gap-5'>
                     <div 
-                    className='text-lg font-semibold text-gray-600'>PaneCake</div>
+                     className='text-lg font-semibold text-gray-600'>PaneCake
+                    </div>
 
+                    {/* ========================= btn , span========================= */}
                     <div 
-                    className='w-[110px] h-[50px]  bg-slate-400 flex overflow-hidden rounded-lg 
-                    shadow-lg font-semibold border-2  border-green-400 text-xl'>
+                     className='w-[110px] h-[50px]  bg-slate-400 flex overflow-hidden rounded-lg 
+                     shadow-lg font-semibold border-2  border-green-400 text-xl'>
 
                         <button 
                         className='w-[30%] h-full text-green-400 bg-white flex 
@@ -30,11 +32,10 @@ const Card2 = () => {
                         </div>
                 </div>
             </div>
-
+{/* ====================== Side ==================== */}
             <div>
 
             </div>
-
         </div>
     )
 }
