@@ -38,7 +38,7 @@ const Card = ({ name, image, id, price, type }) => {
             </div>
             <button
                 className=' w-full rounded-lg bg-green-500 p-3 text-white hover:bg-green-400
-                transition-all cursor-pointer' onClick={() => disPatch(AddItem(id))} >Add to dish</button>
+                transition-all cursor-pointer' onClick={() => disPatch(AddItem({id:id}))} >Add to dish</button>
         </div>
     )
 }

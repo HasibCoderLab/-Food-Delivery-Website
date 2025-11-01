@@ -6,7 +6,7 @@ import { food_items } from '../food'
 import { useContext } from 'react'
 import { dataContext } from '../context/UserContext'
 import { RxCross2 } from 'react-icons/rx'
-import Card2 from '../components/Card2'
+
 
 
 const Home = () => {
@@ -22,6 +22,9 @@ const Home = () => {
     }
 
   }
+
+
+
 
   // ============ ==================
 
