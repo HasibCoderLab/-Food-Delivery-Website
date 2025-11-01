@@ -1,23 +1,29 @@
 import React, { createContext, useState } from 'react'
-export const  dataContext = createContext();
+import { food_items } from '../food';
+export const dataContext = createContext();
 
-const UserContext = ({children}) => {
+
+const UserContext = ({ children }) => {
 
     // ================ usesate ====== 
-const [input ,setInput] = useState("")
+    const [cate, setCate] = useState(food_items);
+
+    const [input, setInput] = useState("");
     let data = {
-input ,
-setInput
+        input,
+        setInput,
+        cate, 
+        setCate
     }
 
-  return (
-    <div>
-    <dataContext.Provider value={data}>
+    return (
+        <div>
+            <dataContext.Provider value={data}>
 
-        {children}
-    </dataContext.Provider>
-    </div>
-  )
+                {children}
+            </dataContext.Provider>
+        </div>
+    )
 }
 
 export default UserContext
