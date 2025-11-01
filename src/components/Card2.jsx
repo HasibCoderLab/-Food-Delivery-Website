@@ -19,11 +19,13 @@ const Card2 = () => {
                     shadow-lg font-semibold border-2  border-green-400 text-xl'>
 
                         <button 
-                        className='w-[30%] h-full text-green-400 bg-white flex justify-center items-center ' > - </button>
+                        className='w-[30%] h-full text-green-400 bg-white flex 
+                        justify-center items-center hover:bg-gray-200 cursor-pointer ' > - </button>
                         <span 
                         className='w-[40%] h-full text-green-400  bg-slate-200  flex justify-center items-center '>1</span>
                         <button 
-                        className='w-[30%] h-full text-green-400 bg-white flex justify-center items-center ' > + </button>
+                        className='w-[30%] h-full text-green-400 bg-white flex 
+                        justify-center items-center hover:bg-gray-200 cursor-pointer' > + </button>
 
                         </div>
                 </div>
