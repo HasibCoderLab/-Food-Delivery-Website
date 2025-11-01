@@ -6,6 +6,8 @@ import { food_items } from '../food'
 import { useContext } from 'react'
 import { dataContext } from '../context/UserContext'
 import { RxCross2 } from 'react-icons/rx'
+import { useSelector } from 'react-redux'
+import Card2 from '../components/Card2'
 
 
 
@@ -23,7 +25,7 @@ const Home = () => {
 
   }
 
-
+ let items = useSelector(state =>state.cart) ;
 
 
   // ============ ==================
@@ -69,7 +71,21 @@ const Home = () => {
             className=' w-8 h-8 text-green-400 text-[20px] font-semibold cursor-pointer'
             onClick={() => setShowCart(false)} />
         </header>
-        
+        <div>
+         {
+  items.map(item => (
+    <Card2 
+      key={item.id}
+      name={item.name}
+      price={item.price}
+      image={item.image}
+      id={item.id}
+      qty={item.qty}
+    />
+  ))
+}
+
+        </div>
       </div>
     </div>
   )

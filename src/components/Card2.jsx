@@ -1,19 +1,19 @@
 import React from 'react'
-import img from "../assets/image1.avif"
+// import img from "../assets/image1.avif"
 import { RiDeleteBin6Line } from 'react-icons/ri'
 
-const Card2 = () => {
+const Card2 = ({name , price ,image,id , qty}) => {
     return (
         <div className='w-full h-[120px]  p-2 shadow-lg flex justify-between'>
             <div className='w-[60%] h-full   flex gap-5'>
                 <div className='w-[60%] h-full overflow-hidden rounded-lg'>
-                    <img src={img} alt="" className='object-cover' />
+                    <img src={image} alt="" className='object-cover' />
                 </div>
 
                 <div
                     className='w-[40%] h-full flex flex-col gap-5'>
                     <div
-                        className='text-lg font-semibold text-gray-600'>PaneCake
+                        className='text-lg font-semibold text-gray-600'>{name}
                     </div>
 
                     {/* ========================= btn , span========================= */}
@@ -25,7 +25,8 @@ const Card2 = () => {
                             className='w-[30%] h-full text-green-400 bg-white flex 
                         justify-center items-center hover:bg-gray-200 cursor-pointer ' > - </button>
                         <span
-                            className='w-[40%] h-full text-green-400  bg-slate-200  flex justify-center items-center '>1</span>
+                            className='w-[40%] h-full text-green-400  bg-slate-200  
+                            flex justify-center items-center '>{qty}</span>
                         <button
                             className='w-[30%] h-full text-green-400 bg-white flex 
                         justify-center items-center hover:bg-gray-200 cursor-pointer' > + </button>
@@ -35,7 +36,7 @@ const Card2 = () => {
             </div>
             {/* ====================== Right Side ==================== */}
             <div className='flex flex-col justify-start items-end gap-6'>
-                <span className='text-xl font-semibold text-green-400'> Tk 499  /- </span>
+                <span className='text-xl font-semibold text-green-400'> Tk {price} /- </span>
                 <RiDeleteBin6Line className='w-[30px] h-[30px]  text-red-400  cursor-pointer' />
             </div>
         </div>

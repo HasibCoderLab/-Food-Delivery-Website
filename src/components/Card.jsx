@@ -7,7 +7,9 @@
 
 
     const Card = ({ name, image, id, price, type }) => {
+
         let disPatch =  useDispatch();
+        
         return (
             <div
                 className='w-[300px] h-[400px] bg-white p-3 rounded-lg flex flex-col gap-3 shadow-lg
@@ -47,7 +49,7 @@
                 <button
                     className=' w-full rounded-lg bg-green-500 p-3 text-white hover:bg-green-400
                     transition-all cursor-pointer' 
-                    onClick={() => disPatch(AddItem({id:id, name:name, price:price,image:image}))} >Add to dish
+                    onClick={() => disPatch(AddItem({id:id, name:name, price:price,image:image,qty:1}))} >Add to dish
                     </button>
             </div>
         )
