@@ -25,7 +25,7 @@ const Home = () => {
 
   }
 
- let items = useSelector(state =>state.cart) ;
+  const items = useSelector(state => state.cart);
 
 
   // ============ ==================
@@ -73,20 +73,23 @@ const Home = () => {
         </header>
         {/* ============= Side Card ============= */}
         <div className='w-full mt-9 flex flex-col  gap-8'>
-         {
-  items.map(item => (
-    <Card2 
-      key={item.id}
-      name={item.name}
-      price={item.price}
-      image={item.image}
-      id={item.id}
-      qty={item.qty}
-    />
-  ))
-}
+          {
+            items.map(item => (
+              <Card2
+                key={item.id}
+                name={item.name}
+                price={item.price}
+                image={item.image}
+                id={item.id}
+                qty={item.qty}
+              />
+            ))
+          }
 
         </div>
+        {/* ============== Side Cartd [Price] ================= */}
+        <div className="w-full border-t-2 border-gray-400 mt-8 "></div>
+
       </div>
     </div>
   )
