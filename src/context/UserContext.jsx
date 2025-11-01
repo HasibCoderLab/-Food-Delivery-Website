@@ -7,14 +7,10 @@ const UserContext = ({ children }) => {
 
     // ================ usesate ====== 
     const [cate, setCate] = useState(food_items);
-
+const [showCart , setShowCart] = useState(false);
     const [input, setInput] = useState("");
-    let data = {
-        input,
-        setInput,
-        cate, 
-        setCate
-    }
+    
+    let data = {input,setInput,cate, setCate,showCart , setShowCart}
 
     return (
         <div>
