@@ -71,7 +71,8 @@ const Home = () => {
             className=' w-8 h-8 text-green-400 text-[20px] font-semibold cursor-pointer'
             onClick={() => setShowCart(false)} />
         </header>
-        <div>
+        {/* ============= Side Card ============= */}
+        <div className='w-full mt-9 flex flex-col  gap-8'>
          {
   items.map(item => (
     <Card2 
