@@ -66,7 +66,7 @@ const Home = () => {
             className=' w-8 h-8 text-green-400 text-[20px] font-semibold cursor-pointer'
             onClick={() => setShowCart(false)} />
         </header>
-        <Card2 />
+        
       </div>
     </div>
   )
