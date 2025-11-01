@@ -58,7 +58,7 @@ const Home = () => {
         className={`w-full md:w-[40vw] h-1/1 fixed top-0 right-0 bg-white shadow-xl p-6  transition-all duration-600
                   ${showCart ? "translate-x-0" : "translate-x-full"}`}>
         <header
-          className='w-full flex justify-between items-center   ' >
+          className='w-full flex justify-between items-center  ' >
           <span
             className='text-green-400 text-[20px] font-semibold'>Oder Items
           </span>
