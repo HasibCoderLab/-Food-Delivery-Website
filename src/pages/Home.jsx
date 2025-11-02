@@ -30,7 +30,7 @@ const Home = () => {
   const subTotal = items.reduce((total, item) => total + item.price, 0);
   let deliveryFee = 20;
   let taxes = subTotal * 0.5 / 100;
-  let total = subTotal + deliveryFee + taxes
+  let total = Math.floor(subTotal + deliveryFee + taxes)
   console.log(subTotal);
 
 
@@ -95,7 +95,7 @@ const Home = () => {
 
         </div>
         {/* ============== Side Cartd [Price] ================= */}
-        <div className="w-full border-t-2 border-gray-400 mt-7  flex flex-col gap-2 p-8">
+        <div className="w-full border-t-2 border-b-2 border-gray-400 mt-7  flex flex-col gap-2 p-8">
 
           {/* =============== price ,subTotal ,de... */}
           <div className='w-full flex justify-between items-center'>
@@ -111,6 +111,15 @@ const Home = () => {
           <div className='w-full flex justify-between items-center'>
             <span className='text-lg font-semibold text-gray-600' > Taxes </span>
             <span className='text-lg font-semibold text-green-600'> Tk {taxes} /-</span>
+          </div>        
+        </div>
+
+          {/* ========== Total ================ */}
+
+        <div>
+           <div className='w-full flex justify-between items-center'>
+            <span className='text-lg font-semibold text-gray-600' > Total </span>
+            <span className='text-lg font-semibold text-green-600'> Tk {total} /-</span>
           </div>
         </div>
       </div>
