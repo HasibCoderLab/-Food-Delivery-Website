@@ -61,3 +61,16 @@ Start the development server:
 ```bash
 npm run dev
 ```
+---
+# 💡 Technologies Used
+
+⚛️ **React**  
+⚡ **Vite**  
+🎨 **Tailwind CSS**  
+🧭 **React-Redux**  
+🧩 **useState**  
+🧩 **useEffect**
+🧩 **ContextAPI** 
+🧩 **React-Toastify**  
+🧩 **State-manegment**  
+🧩 **Function** 
