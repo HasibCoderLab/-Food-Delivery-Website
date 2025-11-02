@@ -72,5 +72,5 @@ npm run dev
 🧩 **useEffect**
 🧩 **ContextAPI** 
 🧩 **React-Toastify**  
-🧩 **State-manegment**  
+🧩 **State Management**  
 🧩 **Function** 
