@@ -33,9 +33,6 @@ const Home = () => {
   let taxes = subTotal * 0.5 / 100;
   let total = Math.floor(subTotal + deliveryFee + taxes)
 
-
-
-
   // ============ ==================
 
   return (
@@ -45,38 +42,45 @@ const Home = () => {
         !input ? <div className='flex flex-wrap justify-center items-center gap-5 w-full'>
           {
             Categories.map((item) => {
-              return <div className='w-[150px] h-[140px] bg-white flex flex-col  items-start justify-start gap-5 p-5 text-xl font-semibold text-gray-600 rounded-lg shadow-xl cursor-pointer hover:bg-green-200 transition-all duration-200'
-                onClick={() => filter(item.name)}>
-                {item.icon}
-                {item.name}
-
-              </div>
+              return (
+                <div
+                  key={item.id}
+                  className='w-[150px] h-[140px] bg-white flex flex-col  
+                items-start justify-start gap-5 p-5 text-xl font-semibold text-gray-600 rounded-lg 
+                shadow-xl cursor-pointer hover:bg-green-200 transition-all duration-200'
+                  onClick={() => filter(item.name)}>
+                  {item.icon}
+                  {item.name}
+                </div>
+              )
             })
           }
+
         </div> : null
       }
       {/* ============= map =============== */}
       <div className='w-full flex justify-center items-center flex-wrap gap-5 px-5 py-8'>
 
-       {
-        cate.length>1 ?  
-          cate.map((item) => (
+        {
+          cate.length > 1 ?
+            cate.map((item) => (
 
-            <Card name={item.food_name} image={item.food_image} price={item.price} id={item.id}
-              type={item.food_type} key={item.id} />
-          ))
-         : <div className='text-green-500 text-center text-3xl font-semibold' > Not  Dish Found </div>
-       }
+              <Card name={item.food_name} image={item.food_image} price={item.price} id={item.id}
+                type={item.food_type} key={item.id} />
+            ))
+            : <div className='text-green-500 text-center text-3xl font-semibold' > Not  Dish Found </div>
+        }
       </div>
       {/* =================== for  Order items ========================= */}
       <div
         className={`w-full md:w-[40vw] h-full fixed top-0 right-0 bg-white shadow-2xl 
-  p-6 transition-all duration-700  ease-in-out
-  ${showCart ? "translate-x-0" : "translate-x-full"} 
-  flex flex-col overflow-y-auto rounded-l-2xl`}
+    p-6 transition-all duration-700  ease-in-out
+    ${showCart ? "translate-x-0" : "translate-x-full"} 
+    flex flex-col overflow-y-auto rounded-l-2xl`}
       >
         {/* ===== Header ===== */}
-        <header className='w-full flex justify-between items-center mb-6 sticky top-0 bg-white z-10 border-b pb-3'>
+        <header className='w-full flex justify-between items-center mb-6  top-0 bg-white z-10 border-b
+          pb-3'>
           <span className='text-green-500 text-xl font-semibold'>Order Items</span>
           <RxCross2
             className='w-7 h-7 text-green-500 cursor-pointer hover:text-green-600 transition'
@@ -84,54 +88,54 @@ const Home = () => {
           />
         </header>
         {
-          items.length > 0 ? <> 
-        {/* ===== Items list ===== */}
-        <div className='flex flex-col gap-6'>
-          {items.map(item => (
-            <Card2
-              key={item.id}
-              name={item.name}
-              price={item.price}
-              image={item.image}
-              id={item.id}
-              qty={item.qty}
-            />
-          ))}
-        </div>
+          items.length > 0 ? <>
+            {/* ===== Items list ===== */}
+            <div className='flex flex-col gap-6'>
+              {items.map(item => (
+                <Card2
+                  key={item.id}
+                  name={item.name}
+                  price={item.price}
+                  image={item.image}
+                  id={item.id}
+                  qty={item.qty}
+                />
+              ))}
+            </div>
 
-        {/* ===== Price summary ===== */}
-        <div className="border-t-2 border-b-2 border-gray-200 mt-8 flex flex-col gap-3 p-5">
-          <div className='flex justify-between text-gray-600 font-semibold'>
-            <span>Sub Total</span>
-            <span className='text-green-600'>Tk {subTotal} /-</span>
-          </div>
-          <div className='flex justify-between text-gray-600 font-semibold'>
-            <span>Delivery Fee</span>
-            <span className='text-green-600'>Tk {deliveryFee} /-</span>
-          </div>
-          <div className='flex justify-between text-gray-600 font-semibold'>
-            <span>Taxes</span>
-            <span className='text-green-600'>Tk {taxes} /-</span>
-          </div>
-        </div>
+            {/* ===== Price summary ===== */}
+            <div className="border-t-2 border-b-2 border-gray-200 mt-8 flex flex-col gap-3 p-5">
+              <div className='flex justify-between text-gray-600 font-semibold'>
+                <span>Sub Total</span>
+                <span className='text-green-600'>Tk {subTotal} /-</span>
+              </div>
+              <div className='flex justify-between text-gray-600 font-semibold'>
+                <span>Delivery Fee</span>
+                <span className='text-green-600'>Tk {deliveryFee} /-</span>
+              </div>
+              <div className='flex justify-between text-gray-600 font-semibold'>
+                <span>Taxes</span>
+                <span className='text-green-600'>Tk {taxes} /-</span>
+              </div>
+            </div>
 
-        {/* ===== Total + Button ===== */}
-        <div className='mt-6 flex flex-col items-center gap-4'>
-          <div className='w-full flex justify-between items-center'>
-            <span className='text-2xl font-semibold text-gray-700'>Total</span>
-            <span className='text-lg font-semibold text-green-600'>Tk {total} /-</span>
-          </div>
+            {/* ===== Total + Button ===== */}
+            <div className='mt-6 flex flex-col items-center gap-4'>
+              <div className='w-full flex justify-between items-center'>
+                <span className='text-2xl font-semibold text-gray-700'>Total</span>
+                <span className='text-lg font-semibold text-green-600'>Tk {total} /-</span>
+              </div>
 
-          <button
-            className='w-[80%] rounded-lg bg-green-500 py-3 text-white font-semibold
-             hover:bg-green-400 transition-all shadow-md' onClick={() => {
-              toast.success("Confiremed Order")
-             }}>
-            Place Order
-          </button>
-          
-        </div>
-        </> : <div className='text-green-500 text-center text-3xl font-semibold'>  Empty Cart </div>
+              <button
+                className='w-[80%] rounded-lg bg-green-500 py-3 text-white font-semibold
+              hover:bg-green-400 transition-all shadow-md' onClick={() => {
+                  toast.success("Confiremed Order")
+                }}>
+                Place Order
+              </button>
+
+            </div>
+          </> : <div className='text-green-500 text-center text-3xl font-semibold'>  Empty Cart </div>
         }
 
       </div>
