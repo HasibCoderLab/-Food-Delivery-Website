@@ -23,5 +23,6 @@
     }
   });
 
-  export const { AddItem, RemoveItem } = cartSlice.actions;
+      
+  export const { AddItem, RemoveItem ,IncrementQty} = cartSlice.actions;
   export default cartSlice.reducer;

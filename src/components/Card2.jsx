@@ -2,7 +2,7 @@ import React from 'react'
 // import img from "../assets/image1.avif"
 import { RiDeleteBin6Line } from 'react-icons/ri'
 import { useDispatch } from 'react-redux'
-import { RemoveItem } from '../redux/cartSlice'
+import { IncrementQty, RemoveItem } from '../redux/cartSlice'
 
 const Card2 = ({name , price ,image,id , qty}) => {
 
@@ -33,7 +33,7 @@ const Card2 = ({name , price ,image,id , qty}) => {
                             flex justify-center items-center '>{qty}</span>
                         <button
                             className='w-[30%] h-full text-green-400 bg-white flex 
-                        justify-center items-center hover:bg-gray-200 cursor-pointer' > + </button>
+                        justify-center items-center hover:bg-gray-200 cursor-pointer' onClick={dicpatch(IncrementQty)}> + </button>
 
                     </div>
                 </div>
