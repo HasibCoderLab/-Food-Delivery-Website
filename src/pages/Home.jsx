@@ -64,7 +64,7 @@ const Home = () => {
             <Card name={item.food_name} image={item.food_image} price={item.price} id={item.id}
               type={item.food_type} key={item.id} />
           ))
-         : <div> Not  Dish Found </div>
+         : <div className='text-green-500 text-center text-3xl font-semibold' > Not  Dish Found </div>
        }
       </div>
       {/* =================== for  Order items ========================= */}
@@ -127,7 +127,7 @@ const Home = () => {
           </button>
           
         </div>
-        </> : <div>  Empty Cart </div>
+        </> : <div className='text-green-500 text-center text-3xl font-semibold'>  Empty Cart </div>
         }
 
       </div>
