@@ -57,18 +57,20 @@ const Home = () => {
       {/* ============= map =============== */}
       <div className='w-full flex justify-center items-center flex-wrap gap-5 px-5 py-8'>
 
-        {
+       {
+        cate.length>1 ?  
           cate.map((item) => (
 
             <Card name={item.food_name} image={item.food_image} price={item.price} id={item.id}
               type={item.food_type} key={item.id} />
           ))
-        }
+         : <div> Not  Dish Found </div>
+       }
       </div>
       {/* =================== for  Order items ========================= */}
       <div
         className={`w-full md:w-[40vw] h-full fixed top-0 right-0 bg-white shadow-2xl 
-  p-6 transition-all duration-500 
+  p-6 transition-all duration-700  ease-in-out
   ${showCart ? "translate-x-0" : "translate-x-full"} 
   flex flex-col overflow-y-auto rounded-l-2xl`}
       >
@@ -80,7 +82,8 @@ const Home = () => {
             onClick={() => setShowCart(false)}
           />
         </header>
-
+        {
+          items.length > 0 ? <> 
         {/* ===== Items list ===== */}
         <div className='flex flex-col gap-6'>
           {items.map(item => (
@@ -122,7 +125,11 @@ const Home = () => {
             className='w-[80%] rounded-lg bg-green-500 py-3 text-white font-semibold hover:bg-green-400 transition-all shadow-md'>
             Place Order
           </button>
+          
         </div>
+        </> : <div>  Empty Cart </div>
+        }
+
       </div>
 
 
