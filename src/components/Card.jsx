@@ -3,6 +3,7 @@
     import { GiChickenOven } from "react-icons/gi";
     import { useDispatch } from 'react-redux';
     import { AddItem } from '../redux/cartSlice';
+import { toast } from 'react-toastify';
 
 
 
@@ -49,7 +50,12 @@
                 <button
                     className=' w-full rounded-lg bg-green-500 p-3 text-white hover:bg-green-400
                     transition-all cursor-pointer' 
-                    onClick={() => disPatch(AddItem({id:id, name:name, price:price,image:image,qty:1}))} >Add to dish
+                    onClick={
+                        () => {disPatch(AddItem({id:id, name:name, price:price,image:image,qty:1}))
+                        toast.success("Item Added")}
+                    }
+
+                     >Add to dish
                     </button>
             </div>
         )
