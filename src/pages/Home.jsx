@@ -27,6 +27,8 @@ const Home = () => {
 
   const items = useSelector(state => state.cart);
 
+  const subTotal =  items.reduce((total,item) => total+item.price,0)
+
 
   // ============ ==================
 
