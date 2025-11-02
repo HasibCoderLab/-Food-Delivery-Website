@@ -27,8 +27,10 @@
 
                             <button
                                 className='w-[30%] h-full text-green-400 bg-white flex 
-                            justify-center items-center hover:bg-gray-200 cursor-pointer '       
-                                        onClick={() => { dicpatch(DecrementQty(id))} }> - </button>
+                                justify-center items-center hover:bg-gray-200 cursor-pointer '       
+                                        onClick={() => 
+                                         { qty > 1 ?  dicpatch(DecrementQty(id)) : 1} }> -
+                            </button>
                             <span
                                 className='w-[40%] h-full text-green-400  bg-slate-200  
                                 flex justify-center items-center '>{qty}</span>
