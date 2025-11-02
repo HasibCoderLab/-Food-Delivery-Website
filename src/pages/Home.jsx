@@ -8,6 +8,7 @@ import { dataContext } from '../context/UserContext'
 import { RxCross2 } from 'react-icons/rx'
 import { useSelector } from 'react-redux'
 import Card2 from '../components/Card2'
+import { toast } from 'react-toastify'
 
 
 
@@ -122,7 +123,10 @@ const Home = () => {
           </div>
 
           <button
-            className='w-[80%] rounded-lg bg-green-500 py-3 text-white font-semibold hover:bg-green-400 transition-all shadow-md'>
+            className='w-[80%] rounded-lg bg-green-500 py-3 text-white font-semibold
+             hover:bg-green-400 transition-all shadow-md' onClick={() => {
+              toast.success("Confiremed Order")
+             }}>
             Place Order
           </button>
           
